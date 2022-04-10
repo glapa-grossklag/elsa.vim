@@ -8,6 +8,7 @@ syntax match elsaKeyword "\v:"
 highlight link elsaKeyword Keyword
 
 " Comments
+setlocal commentstring=--%s
 syntax match elsaComment "\v--.*$"
 highlight link elsaComment Comment
 
