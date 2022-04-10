@@ -8,3 +8,7 @@ Install using your plugin manager of choice. For example, using
 ```vim
 Plug 'glapa-grossklag/elsa.vim'
 ```
+
+# Screenshots
+
+![A screenshot of the plugin in use](./screenshot.png)
