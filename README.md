@@ -9,6 +9,15 @@ Install using your plugin manager of choice. For example, using
 Plug 'glapa-grossklag/elsa.vim'
 ```
 
+# Concealing
+
+If you'd like to conceal `\x -> x` as `λx -> x`, add the following lines to your Vim configuration file.
+
+```vim
+let g:elsa_conceal = v:true
+set conceallevel=2
+```
+
 # Screenshots
 
 ![A screenshot of the plugin in use](./screenshot.png)

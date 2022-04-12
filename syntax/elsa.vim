@@ -2,6 +2,10 @@ if exists("b:current_syntax")
     finish
 endif
 
+if !exists('g:elsa_conceal') || !has('conceal')
+    let g:elsa_conceal = v:false
+endif
+
 " Keywords
 syntax keyword elsaKeyword let eval
 syntax match elsaKeyword "\v:"
@@ -16,7 +20,11 @@ highlight link elsaComment Comment
 syntax match elsaOperator "\v\="
 syntax match elsaOperator "\v\=[abd*~]\>"
 syntax match elsaOperator "\v-\>"
-syntax match elsaOperator "\v\\"
+if g:elsa_conceal == v:true
+	syntax match elsaOperator "\v\\" conceal cchar=λ
+else
+	syntax match elsaOperator "\v\\"
+end
 highlight link elsaOperator Operator
 
 let b:current_syntax = "elsa"
