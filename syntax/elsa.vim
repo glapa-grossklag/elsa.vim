@@ -27,4 +27,8 @@ else
 end
 highlight link elsaOperator Operator
 
+" Definitions
+syntax match elsaConstant "\v[A-Z]+[A-Z_0-9]*"
+highlight link elsaConstant Constant
+
 let b:current_syntax = "elsa"
