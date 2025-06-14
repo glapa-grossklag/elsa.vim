@@ -16,6 +16,13 @@ setlocal commentstring=--%s
 syntax match elsaComment "\v--.*$"
 highlight link elsaComment Comment
 
+" Multi-line comments
+syntax cluster elsaCommentContained contains=elsaComment,elsaCommentEnd
+syntax region elsaComment start="{-" end="-}" contains=@elsaCommentContained keepend
+syntax match elsaCommentEnd "-}" contained
+highlight link elsaComment Comment
+highlight link elsaCommentEnd Comment
+
 " Operators
 syntax match elsaOperator "\v\="
 syntax match elsaOperator "\v\=[abd*~]\>"
