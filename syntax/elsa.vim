@@ -17,11 +17,8 @@ syntax match elsaComment "\v--.*$"
 highlight link elsaComment Comment
 
 " Multi-line comments
-syntax cluster elsaCommentContained contains=elsaComment,elsaCommentEnd
-syntax region elsaComment start="{-" end="-}" contains=@elsaCommentContained keepend
-syntax match elsaCommentEnd "-}" contained
-highlight link elsaComment Comment
-highlight link elsaCommentEnd Comment
+syntax region elsaMultiLineComment start="{-" end="-}" keepend
+highlight link elsaMultiLineComment Comment
 
 " Operators
 syntax match elsaOperator "\v\="
