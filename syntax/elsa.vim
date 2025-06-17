@@ -16,6 +16,10 @@ setlocal commentstring=--%s
 syntax match elsaComment "\v--.*$"
 highlight link elsaComment Comment
 
+" Multi-line comments
+syntax region elsaMultiLineComment start="{-" end="-}" keepend
+highlight link elsaMultiLineComment Comment
+
 " Operators
 syntax match elsaOperator "\v\="
 syntax match elsaOperator "\v\=[abd*~]\>"
